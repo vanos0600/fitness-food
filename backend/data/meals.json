@@ -1,0 +1,58 @@
+{
+  "desayuno": [
+    {
+      "name": "Arepa integral con aguacate y huevo",
+      "calories": 400
+    },
+    {
+      "name": "Batido de proteína con avena y banano",
+      "calories": 350
+    },
+    {
+      "name": "Tostadas integrales con pavo y café sin azúcar",
+      "calories": 300
+    }
+  ],
+  "almuerzo": [
+    {
+      "name": "Pechuga a la plancha con arroz integral y ensalada",
+      "calories": 550
+    },
+    {
+      "name": "Tilapia al horno con yuca cocida y vegetales",
+      "calories": 480
+    },
+    {
+      "name": "Carne magra con quinoa y brócoli",
+      "calories": 600
+    }
+  ],
+  "cena": [
+    {
+      "name": "Ensalada de atún con garbanzos",
+      "calories": 420
+    },
+    {
+      "name": "Sopa de lentejas con aguacate",
+      "calories": 380
+    },
+    {
+      "name": "Wrap integral de pollo y verduras",
+      "calories": 500
+    }
+  ],
+  "snacks": [
+    {
+      "name": "Nueces y almendras",
+      "calories": 250
+    },
+    {
+      "name": "Yogur griego sin azúcar con frutos rojos",
+      "calories": 180
+    },
+    {
+      "name": "Barra de proteína casera",
+      "calories": 220
+    }
+  ]
+}
