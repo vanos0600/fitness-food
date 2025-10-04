@@ -294,39 +294,46 @@ const App: React.FC = () => {
 
   return (
     <>
+       
       <style>
         {`
           /* ==========================
-            IMPORTS & VARIABLES
+            IMPORTS & VARIABLES - ESTILO AÑOS 60 Y VIDA SANA
           ========================== */
-          @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Oswald:wght@400;700&family=Montserrat:wght@400;600&display=swap');
 
           :root {
-            --primary-color: #4A90E2; 
-            --secondary-color: #F5A623; 
-            --background-color: #F7F7F7; 
+            --primary-color: #FF5722; /* Naranja vibrante de los 60 */
+            --secondary-color: #4CAF50; /* Verde saludable */
+            --accent-color: #2196F3; /* Azul energético */
+            --background-color: #FFF9C4; /* Amarillo claro retro */
             --card-background: #FFFFFF; 
-            --card-secondary-background: #F0F0F0;
+            --card-secondary-background: #F5F5F5;
             --card-image-overlay: rgba(0, 0, 0, 0.4);
-            --border-color: #D3D3D3;
-            --text-color-dark: #333333; 
-            --text-color-medium: #666666; 
-            --text-color-light: #B0B0B0; 
-            --error-color: #D32F2F;
-            --hover-primary: #3A7ECB;
+            --border-color: #BDBDBD;
+            --text-color-dark: #212121; 
+            --text-color-medium: #757575; 
+            --text-color-light: #BDBDBD; 
+            --error-color: #F44336;
+            --hover-primary: #E64A19;
+            --pattern-color: #FFC107; /* Amarillo patrón */
           }
 
           /* ==========================
             GLOBAL STYLES
           ========================== */
           body {
-            font-family: 'Poppins', 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--background-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: var(--text-color-dark);
             box-sizing: border-box;
+            background-image: 
+              radial-gradient(circle at 25% 25%, var(--pattern-color) 2px, transparent 2px),
+              radial-gradient(circle at 75% 75%, var(--pattern-color) 2px, transparent 2px);
+            background-size: 30px 30px;
           }
 
           *, *::before, *::after {
@@ -342,42 +349,57 @@ const App: React.FC = () => {
           }
           
           /* ==========================
-            MAIN CARD
+            MAIN CARD - ESTILO RETRO
           ========================== */
           .main-card {
             background-color: var(--card-background);
-            border-radius: 1rem;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             padding: 2rem;
             width: 100%;
             max-width: 90rem;
             margin: 0 auto;
+            border: 3px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
           }
 
           /* ==========================
-            TYPOGRAPHY
+            TYPOGRAPHY - ESTILO AÑOS 60
           ========================== */
           .title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 700;
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            font-weight: 400;
             text-align: center;
             margin-bottom: 0.5rem;
             color: var(--primary-color);
-            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 0px var(--accent-color);
+            letter-spacing: 1px;
           }
           
           .motto {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
+            font-family: 'Oswald', sans-serif;
             text-align: center;
             color: var(--text-color-medium);
             margin-bottom: 2rem;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
           }
 
           /* ==========================
-            FORM ELEMENTS
+            FORM ELEMENTS - ESTILO RETRO
           ========================== */
           .input-group {
             display: flex;
@@ -388,86 +410,98 @@ const App: React.FC = () => {
 
           .input-field {
             width: 100%;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             background-color: var(--card-secondary-background);
-            border-radius: 0.5rem;
+            border-radius: 8px;
             padding: 0.75rem;
             font-size: 1.125rem;
             outline: none;
             transition: all 0.3s;
             color: var(--text-color-dark);
+            font-family: 'Montserrat', sans-serif;
           }
 
           .input-field:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3);
           }
 
           .button {
             width: 100%;
             padding: 0.75rem 1.5rem;
-            color: var(--card-background);
-            background-color: var(--primary-color);
-            border-radius: 0.5rem;
+            color: white;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 8px;
             font-size: 1.125rem;
             font-weight: 600;
             text-transform: uppercase;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
           }
 
           .button:hover {
-            background-color: var(--hover-primary);
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
           }
           
           .button:active {
-            transform: scale(0.98);
+            transform: translateY(1px);
           }
 
           .button:disabled {
-            background-color: var(--border-color);
+            background: var(--border-color);
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
           }
 
           .error-alert {
-            background-color: #fce8e8;
-            border: 1px solid var(--error-color);
+            background-color: #ffebee;
+            border: 2px solid var(--error-color);
             color: var(--error-color);
             padding: 0.75rem;
-            border-radius: 0.5rem;
+            border-radius: 8px;
             margin-bottom: 1rem;
             text-align: center;
             font-size: 0.9rem;
+            font-weight: 600;
           }
 
           /* ==========================
-            MENU & DAYS
+            MENU & DAYS - ESTILO VIDA SANA
           ========================== */
           .menu-container {
             margin-top: 1.5rem;
           }
 
           .menu-title-main {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--text-color-dark);
+            color: var(--secondary-color);
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
           }
           
           .weekly-total {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-color-medium);
             margin-bottom: 2rem;
+            background-color: var(--card-secondary-background);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border: 2px dashed var(--accent-color);
           }
 
           .days-container {
@@ -478,10 +512,23 @@ const App: React.FC = () => {
 
           .day-card {
             background-color: var(--card-background);
-            border-radius: 1rem;
+            border-radius: 12px;
             padding: 2rem;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 0 0 0 60px;
           }
 
           .day-header {
@@ -490,39 +537,42 @@ const App: React.FC = () => {
           }
 
           .day-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
           }
 
           .day-calories {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--text-color-medium);
           }
 
           .progress-bar-container {
-            height: 8px;
+            height: 12px;
             background-color: var(--card-secondary-background);
-            border-radius: 4px;
+            border-radius: 6px;
             margin-top: 0.5rem;
             overflow: hidden;
+            border: 1px solid var(--border-color);
           }
 
           .progress-bar {
             height: 100%;
             transition: width 0.5s ease-in-out;
-            border-radius: 4px;
+            border-radius: 6px;
           }
 
           /* ==========================
-            MEALS GRID
+            MEALS GRID - ESTILO AÑOS 60
           ========================== */
           .meals-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
             align-items: stretch;
@@ -530,26 +580,27 @@ const App: React.FC = () => {
           }
 
           /* ==========================
-            MEAL CARD ENHANCEMENTS
+            MEAL CARD ENHANCEMENTS - ESTILO RETRO Y DEPORTIVO
           ========================== */
           .meal-card {
             background-color: var(--card-secondary-background);
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
             overflow: hidden;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             position: relative;
             animation: cardAppear 0.5s ease forwards;
           }
 
           .meal-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            border-color: var(--primary-color);
           }
 
           .meal-image-wrapper {
@@ -600,12 +651,13 @@ const App: React.FC = () => {
           }
 
           .meal-name {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Oswald', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             letter-spacing: 0.03em;
+            text-transform: uppercase;
           }
 
           .meal-calories {
@@ -616,7 +668,7 @@ const App: React.FC = () => {
           }
 
           .meal-description {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-style: italic;
             font-size: 0.95rem;
             padding: 1.5rem;
@@ -640,14 +692,15 @@ const App: React.FC = () => {
             text-transform: uppercase;
             transition: all 0.3s;
             border: none;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
             cursor: pointer;
             letter-spacing: 0.05em;
+            font-family: 'Oswald', sans-serif;
           }
 
           .recipe-toggle-button:hover {
             background-color: var(--primary-color);
-            color: var(--card-background);
+            color: white;
           }
 
           .recipe-content {
@@ -681,15 +734,19 @@ const App: React.FC = () => {
             font-weight: bold;
             position: absolute;
             left: 0;
+            font-size: 1.2rem;
           }
 
           .recipe-ingredients-title, .recipe-preparation-title {
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             font-size: 1.2rem;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
           }
 
           .recipe-preparation-text {
@@ -702,9 +759,10 @@ const App: React.FC = () => {
             display: flex;
             justify-content: space-around;
             padding: 1rem 0;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
             font-size: 0.9rem;
             background: rgba(0,0,0,0.03);
+            border-radius: 0 0 10px 10px;
           }
 
           .macro-item {
@@ -717,11 +775,13 @@ const App: React.FC = () => {
           .macro-value {
             font-weight: 700;
             color: var(--primary-color);
+            font-size: 1.1rem;
           }
 
           .macro-label {
             font-size: 0.8rem;
             color: var(--text-color-medium);
+            text-transform: uppercase;
           }
 
           /* Badge for meal type */
@@ -729,15 +789,17 @@ const App: React.FC = () => {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--secondary-color);
+            background: var(--accent-color);
             color: white;
             padding: 0.35rem 0.75rem;
-            border-radius: 2rem;
+            border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
             z-index: 30;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
           }
 
           /* Animation for card appearance */
@@ -757,10 +819,6 @@ const App: React.FC = () => {
           .meal-card:nth-child(2) { animation-delay: 0.2s; }
           .meal-card:nth-child(3) { animation-delay: 0.3s; }
           .meal-card:nth-child(4) { animation-delay: 0.4s; }
-          .meal-card:nth-child(5) { animation-delay: 0.5s; }
-          .meal-card:nth-child(6) { animation-delay: 0.6s; }
-          .meal-card:nth-child(7) { animation-delay: 0.7s; }
-          .meal-card:nth-child(8) { animation-delay: 0.8s; }
 
           /* Hover effect for the entire card */
           .meal-card::before {
@@ -770,7 +828,7 @@ const App: React.FC = () => {
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(245, 166, 35, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 5;
@@ -787,6 +845,10 @@ const App: React.FC = () => {
             .input-group { 
               flex-direction: row; 
               gap: 1.5rem; 
+            }
+            
+            .button {
+              width: auto;
             }
           }
           
