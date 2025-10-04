@@ -1,12 +1,14 @@
 [tool.poetry]
 name = "fitness-food"
-fastapi = "^0.111.0"
 version = "0.1.0"
 description = "Backend for the fitness menu application."
 authors = ["Oskar Vanegas <vanegaso045@gmail.com>"]
-license = "MIT"               
+license = "MIT"
 readme = "README.md"
-[tool.poetry.dependencies]  
+
+[tool.poetry.dependencies]  # <--- ¡FastAPI debe ir aquí abajo!
 python = "^3.13"
 Flask = "^3.0.0"
 gunicorn = "^22.0.0"
+fastapi = "^0.111.0"   # <-- Mueve esta línea AQUÍ
+uvicorn = "^0.30.1"    # <-- Agrega esta línea si no lo has hecho
