@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "fitness-food"
 version = "0.1.0"
-# ...
-
-[tool.poetry.dependencies]  <-- ¡SOLO DEBE HABER UNA!
+description = "Backend for the fitness menu application."
+authors = ["Oskar Vanegas <vanegaso045@gmail.com>"]
+license = "MIT"               
+readme = "README.md"
+[tool.poetry.dependencies]  
 python = "^3.13"
 Flask = "^3.0.0"
 gunicorn = "^22.0.0"
-# ... todas tus otras dependencias
