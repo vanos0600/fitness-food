@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "fitness-food"
+fastapi = "^0.111.0"
 version = "0.1.0"
 description = "Backend for the fitness menu application."
 authors = ["Oskar Vanegas <vanegaso045@gmail.com>"]
