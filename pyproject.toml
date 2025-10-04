@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "fitness-food"         # <--- Campo Requerido: Nombre del proyecto
+version = "0.1.0"             # <--- Campo Requerido: Versión inicial
+description = "Backend for the fitness menu application."
+authors = ["Oskar Vanegas <vanegaso045@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"              # Asegúrate de que esta versión sea correcta
+# ... tus dependencias van aquí, ej: flask, gunicorn
