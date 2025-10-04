@@ -1,0 +1,3 @@
+Flask
+gunicorn
+# Agrega tus otras dependencias aquí, una por línea
