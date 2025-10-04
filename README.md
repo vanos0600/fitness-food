@@ -131,6 +131,8 @@ Deploy: Vercel (Frontend) + Railway/Render (Backend)
 
 ✨ Autor
 👤 Oskar Vanegas
-📧 Contacto: (tu email o LinkedIn)
+📧 Contacto: vanegaso045@gmail.com
+
 
 ⭐ ¡Si te gusta este proyecto, dale una estrella en GitHub!
+
